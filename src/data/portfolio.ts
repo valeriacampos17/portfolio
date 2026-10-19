@@ -50,7 +50,9 @@ export const projects: Project[] = [
 		tech: ['Angular', 'TypeScript', 'Tailwind CSS', 'Express', 'JWT', 'SQLite/Turso', 'Vitest'],
 		link: 'https://medcontrol-suite-vale.onrender.com',
 		repo: 'https://github.com/valeriacampos17/MedControl-Clinical-Suite',
-		imageAlt: 'MedControl Clinical Suite en funcionamiento',
+		image: 'projects/medcontrol-dashboard.webp',
+		imageAlt: 'Dashboard de citas de MedControl Clinical Suite',
+		insetImage: 'projects/medcontrol-login.webp',
 		highlights: ['115 commits', 'Desplegado en Render'],
 	},
 ];

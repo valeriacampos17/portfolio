@@ -7,7 +7,7 @@ const visibleSocials = socials.filter((social) => social.url && social.icon !== 
 
 <section id="contacto" class="scroll-mt-20 py-24">
 	<div class="mx-auto max-w-6xl px-6">
-		<div class="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-brand-600/20 via-white/[0.03] to-fuchsia-600/10 p-8 sm:p-14">
+		<div class="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-brand-600/20 via-white/[0.03] to-fuchsia-600/10 p-6 sm:p-10 lg:p-14">
 			<SectionHeading
 				kicker="Contacto"
 				title="¿Trabajamos juntos?"
@@ -25,9 +25,9 @@ const visibleSocials = socials.filter((social) => social.url && social.icon !== 
 								<path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8M5 19h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2z"></path>
 							</svg>
 						</span>
-						<span>
+						<span class="min-w-0 flex-1">
 							<span class="block text-xs uppercase tracking-wider text-zinc-500">Correo</span>
-							<span class="font-medium text-white">{profile.email}</span>
+							<span class="block break-all text-sm font-medium text-white sm:text-base">{profile.email}</span>
 						</span>
 					</a>
 
@@ -40,9 +40,9 @@ const visibleSocials = socials.filter((social) => social.url && social.icon !== 
 								<path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 0 1 2-2h3.28a1 1 0 0 1 .95.68l1.5 4.5a1 1 0 0 1-.5 1.2l-2.26 1.13a11 11 0 0 0 5.52 5.52l1.13-2.26a1 1 0 0 1 1.2-.5l4.5 1.5a1 1 0 0 1 .68.95V19a2 2 0 0 1-2 2h-1C9.72 21 3 14.28 3 6V5z"></path>
 							</svg>
 						</span>
-						<span>
+						<span class="min-w-0 flex-1">
 							<span class="block text-xs uppercase tracking-wider text-zinc-500">Teléfono</span>
-							<span class="font-medium text-white">{profile.phone}</span>
+							<span class="block text-sm font-medium text-white sm:text-base">{profile.phone}</span>
 						</span>
 					</a>
 
@@ -52,9 +52,9 @@ const visibleSocials = socials.filter((social) => social.url && social.icon !== 
 								<path stroke-linecap="round" stroke-linejoin="round" d="M17.66 8.11a5.5 5.5 0 0 1-7.42 0M12 21a9 9 0 0 0 9-9c0-4.97-4.03-9-9-9s-9 4.03-9 9a9 9 0 0 0 9 9zM12 12.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path>
 							</svg>
 						</span>
-						<span>
+						<span class="min-w-0 flex-1">
 							<span class="block text-xs uppercase tracking-wider text-zinc-500">Ubicación</span>
-							<span class="font-medium text-white">{profile.location}</span>
+							<span class="block text-sm font-medium text-white sm:text-base">{profile.location}</span>
 						</span>
 					</div>
 
@@ -86,7 +86,7 @@ const visibleSocials = socials.filter((social) => social.url && social.icon !== 
 								type="text"
 								required
 								placeholder="Tu nombre"
-								class="w-full rounded-xl border border-white/10 bg-zinc-950/60 px-4 py-3 text-sm text-white placeholder:text-zinc-600 transition focus:border-brand-500/60 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+								class="w-full rounded-xl border border-white/10 bg-zinc-950/60 px-4 py-3 text-base text-white sm:text-sm placeholder:text-zinc-600 transition focus:border-brand-500/60 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
 							/>
 						</div>
 						<div>
@@ -97,7 +97,7 @@ const visibleSocials = socials.filter((social) => social.url && social.icon !== 
 								type="email"
 								required
 								placeholder="tu@email.com"
-								class="w-full rounded-xl border border-white/10 bg-zinc-950/60 px-4 py-3 text-sm text-white placeholder:text-zinc-600 transition focus:border-brand-500/60 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+								class="w-full rounded-xl border border-white/10 bg-zinc-950/60 px-4 py-3 text-base text-white sm:text-sm placeholder:text-zinc-600 transition focus:border-brand-500/60 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
 							/>
 						</div>
 					</div>
@@ -109,7 +109,7 @@ const visibleSocials = socials.filter((social) => social.url && social.icon !== 
 							rows="4"
 							required
 							placeholder="Cuéntame sobre tu proyecto o propuesta..."
-							class="w-full resize-none rounded-xl border border-white/10 bg-zinc-950/60 px-4 py-3 text-sm text-white placeholder:text-zinc-600 transition focus:border-brand-500/60 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+							class="w-full resize-none rounded-xl border border-white/10 bg-zinc-950/60 px-4 py-3 text-base text-white sm:text-sm placeholder:text-zinc-600 transition focus:border-brand-500/60 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
 						></textarea>
 					</div>
 					<button

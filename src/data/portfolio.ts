@@ -18,47 +18,40 @@ export const profile = {
 
 export interface Project {
 	title: string;
+	subtitle: string;
 	description: string;
 	tech: string[];
-	link: string;
+	link?: string;
 	repo?: string;
-	featured?: boolean;
+	image?: string;
+	imageAlt?: string;
+	insetImage?: string;
+	highlights?: string[];
 }
 
 export const projects: Project[] = [
 	{
-		title: 'Panel de Gestión de Usuarios',
+		title: 'Vale-Shop',
+		subtitle: 'PWA · Frontend',
 		description:
-			'Interfaz administrativa construida con Angular para la gestión de usuarios y permisos, con consumo de servicios REST API y diseño responsivo aplicando Tailwind CSS.',
-		tech: ['Angular', 'TypeScript', 'Tailwind CSS', 'REST API'],
-		link: '',
-		repo: '',
-		featured: true,
+			'Catálogo de productos interactivo construido como Progressive Web App: carrusel de destacados, categorías de ropa y accesorios, modo oscuro/claro e instalación en móvil con funcionamiento offline gracias a Service Workers.',
+		tech: ['HTML5', 'CSS3', 'JavaScript', 'PWA', 'Service Worker'],
+		repo: 'https://github.com/valeriacampos17/vale-shop',
+		image: 'projects/vale-shop-desktop.webp',
+		imageAlt: 'Captura de la tienda Vale-Shop en vista de escritorio',
+		insetImage: 'projects/vale-shop-mobile.webp',
+		highlights: ['112 commits', '1 fork'],
 	},
 	{
-		title: 'Landing Page Corporativa',
+		title: 'MedControl Clinical Suite',
+		subtitle: 'Fullstack · Angular + Express',
 		description:
-			'Sitio promocional de una página con maquetación adaptativa, optimizado para carga rápida y preparado para posicionamiento en buscadores.',
-		tech: ['HTML5', 'CSS3', 'Tailwind CSS', 'WordPress'],
-		link: '',
-		repo: '',
-		featured: true,
-	},
-	{
-		title: 'App de Consultas con API REST',
-		description:
-			'Aplicación web que consume una API REST para mostrar y filtrar información en tiempo real, con manejo de estados y validación de formularios.',
-		tech: ['Angular', 'TypeScript', 'REST API'],
-		link: '',
-		repo: '',
-	},
-	{
-		title: 'Portafolio Personal',
-		description:
-			'Sitio estático de portafolio desarrollado con Astro y Tailwind CSS, desplegado de forma automática mediante flujos de integración continua.',
-		tech: ['Astro', 'Tailwind CSS', 'Git'],
-		link: '',
-		repo: '',
+			'Suite clínica fullstack: frontend en Angular 22 y Tailwind 4 con API REST en Express, autenticación JWT, validación con Zod y base SQLite/Turso. Gestión de usuarios e historia clínica con exámenes físicos, tests con Vitest y despliegue continuo en Render.',
+		tech: ['Angular', 'TypeScript', 'Tailwind CSS', 'Express', 'JWT', 'SQLite/Turso', 'Vitest'],
+		link: 'https://medcontrol-suite-vale.onrender.com',
+		repo: 'https://github.com/valeriacampos17/MedControl-Clinical-Suite',
+		imageAlt: 'MedControl Clinical Suite en funcionamiento',
+		highlights: ['115 commits', 'Desplegado en Render'],
 	},
 ];
 

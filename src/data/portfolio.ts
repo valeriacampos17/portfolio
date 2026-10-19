@@ -26,20 +26,21 @@ export interface Project {
 	image?: string;
 	imageAlt?: string;
 	insetImage?: string;
+	coverStyle?: 'mobile';
 	highlights?: string[];
 }
 
 export const projects: Project[] = [
 	{
 		title: 'Vale-Shop',
-		subtitle: 'PWA · Frontend',
+		subtitle: 'PWA · Solo mobile',
 		description:
-			'Catálogo de productos interactivo construido como Progressive Web App: carrusel de destacados, categorías de ropa y accesorios, modo oscuro/claro e instalación en móvil con funcionamiento offline gracias a Service Workers.',
+			'Tienda PWA desarrollada exclusivamente para dispositivos móviles: carrusel de productos destacados, categorías de ropa y accesorios, modo oscuro/claro e instalación en el teléfono con funcionamiento offline gracias a Service Workers.',
 		tech: ['HTML5', 'CSS3', 'JavaScript', 'PWA', 'Service Worker'],
 		repo: 'https://github.com/valeriacampos17/vale-shop',
-		image: 'projects/vale-shop-desktop.webp',
-		imageAlt: 'Captura de la tienda Vale-Shop en vista de escritorio',
-		insetImage: 'projects/vale-shop-mobile.webp',
+		image: 'projects/vale-shop-mobile.webp',
+		imageAlt: 'Vale-Shop en un teléfono móvil',
+		coverStyle: 'mobile',
 		highlights: ['112 commits', '1 fork'],
 	},
 	{

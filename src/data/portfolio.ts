@@ -145,9 +145,9 @@ export const languages = [
 ];
 
 export const focusAreas = [
-	{ name: 'Desarrollo Frontend', value: 85 },
-	{ name: 'Atención al Cliente', value: 90 },
-	{ name: 'Ingeniería & Gestión', value: 75 },
+	{ name: 'Desarrollo Frontend', value: 90 },
+	{ name: 'Ingeniería de Sistemas', value: 85 },
+	{ name: 'Atención al Cliente', value: 75 },
 ];
 
 export const quickFacts = [

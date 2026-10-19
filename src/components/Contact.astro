@@ -1,0 +1,148 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import { profile, socials } from '../data/portfolio';
+
+const visibleSocials = socials.filter((social) => social.url && social.icon !== 'mail');
+---
+
+<section id="contacto" class="scroll-mt-20 py-24">
+	<div class="mx-auto max-w-6xl px-6">
+		<div class="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-brand-600/20 via-white/[0.03] to-fuchsia-600/10 p-8 sm:p-14">
+			<SectionHeading
+				kicker="Contacto"
+				title="¿Trabajamos juntos?"
+				subtitle="Estoy abierta a propuestas laborales, proyectos y oportunidades donde pueda aportar en el área técnica y de servicio al cliente."
+			/>
+
+			<div class="grid gap-8 lg:grid-cols-2">
+				<div class="space-y-4">
+					<a
+						href={`mailto:${profile.email}`}
+						class="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition hover:border-brand-500/40 hover:bg-white/[0.06]"
+					>
+						<span class="rounded-xl bg-brand-500/15 p-3 text-brand-300">
+							<svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8M5 19h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2z"></path>
+							</svg>
+						</span>
+						<span>
+							<span class="block text-xs uppercase tracking-wider text-zinc-500">Correo</span>
+							<span class="font-medium text-white">{profile.email}</span>
+						</span>
+					</a>
+
+					<a
+						href={`tel:${profile.phoneHref}`}
+						class="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition hover:border-brand-500/40 hover:bg-white/[0.06]"
+					>
+						<span class="rounded-xl bg-brand-500/15 p-3 text-brand-300">
+							<svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 0 1 2-2h3.28a1 1 0 0 1 .95.68l1.5 4.5a1 1 0 0 1-.5 1.2l-2.26 1.13a11 11 0 0 0 5.52 5.52l1.13-2.26a1 1 0 0 1 1.2-.5l4.5 1.5a1 1 0 0 1 .68.95V19a2 2 0 0 1-2 2h-1C9.72 21 3 14.28 3 6V5z"></path>
+							</svg>
+						</span>
+						<span>
+							<span class="block text-xs uppercase tracking-wider text-zinc-500">Teléfono</span>
+							<span class="font-medium text-white">{profile.phone}</span>
+						</span>
+					</a>
+
+					<div class="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+						<span class="rounded-xl bg-brand-500/15 p-3 text-brand-300">
+							<svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M17.66 8.11a5.5 5.5 0 0 1-7.42 0M12 21a9 9 0 0 0 9-9c0-4.97-4.03-9-9-9s-9 4.03-9 9a9 9 0 0 0 9 9zM12 12.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path>
+							</svg>
+						</span>
+						<span>
+							<span class="block text-xs uppercase tracking-wider text-zinc-500">Ubicación</span>
+							<span class="font-medium text-white">{profile.location}</span>
+						</span>
+					</div>
+
+					{
+						visibleSocials.length > 0 && (
+							<div class="flex flex-wrap gap-3 pt-2">
+								{visibleSocials.map((social) => (
+									<a
+										href={social.url}
+										target="_blank"
+										rel="noopener noreferrer"
+										class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-5 py-2.5 text-sm font-medium text-zinc-300 transition hover:border-brand-500/40 hover:text-white"
+									>
+										{social.name}
+									</a>
+								))}
+							</div>
+						)
+					}
+				</div>
+
+				<form id="contact-form" class="space-y-4">
+					<div class="grid gap-4 sm:grid-cols-2">
+						<div>
+							<label for="name" class="mb-1.5 block text-sm font-medium text-zinc-300">Nombre</label>
+							<input
+								id="name"
+								name="name"
+								type="text"
+								required
+								placeholder="Tu nombre"
+								class="w-full rounded-xl border border-white/10 bg-zinc-950/60 px-4 py-3 text-sm text-white placeholder:text-zinc-600 transition focus:border-brand-500/60 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+							/>
+						</div>
+						<div>
+							<label for="email-input" class="mb-1.5 block text-sm font-medium text-zinc-300">Email</label>
+							<input
+								id="email-input"
+								name="email"
+								type="email"
+								required
+								placeholder="tu@email.com"
+								class="w-full rounded-xl border border-white/10 bg-zinc-950/60 px-4 py-3 text-sm text-white placeholder:text-zinc-600 transition focus:border-brand-500/60 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+							/>
+						</div>
+					</div>
+					<div>
+						<label for="message" class="mb-1.5 block text-sm font-medium text-zinc-300">Mensaje</label>
+						<textarea
+							id="message"
+							name="message"
+							rows="4"
+							required
+							placeholder="Cuéntame sobre tu proyecto o propuesta..."
+							class="w-full resize-none rounded-xl border border-white/10 bg-zinc-950/60 px-4 py-3 text-sm text-white placeholder:text-zinc-600 transition focus:border-brand-500/60 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+						></textarea>
+					</div>
+					<button
+						type="submit"
+						class="w-full rounded-xl bg-brand-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 transition hover:bg-brand-400 sm:w-auto"
+					>
+						Enviar mensaje
+					</button>
+					<p id="form-status" class="hidden text-sm font-medium text-brand-300" role="status"></p>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script>
+	import { profile } from '../data/portfolio';
+
+	const form = document.getElementById('contact-form') as HTMLFormElement | null;
+	const status = document.getElementById('form-status');
+
+	form?.addEventListener('submit', (event) => {
+		event.preventDefault();
+		const data = new FormData(form);
+		const subject = `Portfolio: mensaje de ${data.get('name')}`;
+		const body = `${data.get('message')}\n\n— ${data.get('name')} (${data.get('email')})`;
+		const mailto = `mailto:${profile.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+		if (status) {
+			status.textContent = '¡Gracias! Se abrirá tu cliente de correo para enviar el mensaje.';
+			status.classList.remove('hidden');
+		}
+		window.location.href = mailto;
+		form.reset();
+	});
+</script>

@@ -1,0 +1,37 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import { skills } from '../data/portfolio';
+---
+
+<section id="habilidades" class="scroll-mt-20 py-24">
+	<div class="mx-auto max-w-6xl px-6">
+		<SectionHeading
+			kicker="Habilidades"
+			title="Tecnologías con las que trabajo"
+			subtitle="Un stack versátil para llevar ideas desde el diseño hasta producción."
+		/>
+
+		<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+			{
+				skills.map((group) => (
+					<div class="rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-brand-500/30">
+						<h3 class="mb-4 flex items-center gap-2 text-base font-semibold text-white">
+							<span class="h-2 w-2 rounded-full bg-brand-400" />
+							{group.name}
+						</h3>
+						<ul class="space-y-2.5">
+							{group.items.map((item) => (
+								<li class="flex items-center gap-2 text-sm text-zinc-400">
+									<svg class="h-4 w-4 shrink-0 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+										<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+									</svg>
+									{item}
+								</li>
+							))}
+						</ul>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>

@@ -1,0 +1,19 @@
+---
+import { profile } from '../data/portfolio';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-white/5 py-10">
+	<div
+		class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-sm text-zinc-500 sm:flex-row"
+	>
+		<p>© {year} {profile.name}. Todos los derechos reservados.</p>
+		<p>
+			Hecho con
+			<a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="text-zinc-400 transition hover:text-brand-300">Astro</a>
+			&
+			<a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" class="text-zinc-400 transition hover:text-brand-300">Tailwind CSS</a>
+		</p>
+	</div>
+</footer>

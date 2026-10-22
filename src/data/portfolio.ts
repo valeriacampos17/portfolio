@@ -56,6 +56,23 @@ export const projects: Project[] = [
 		insetImage: 'projects/medcontrol-login.webp',
 		highlights: ['115 commits', 'Desplegado en Render'],
 	},
+	{
+		title: 'Admin Orders PWA',
+		subtitle: 'PWA · JavaScript + Firebase',
+		description:
+			'Panel de administración de pedidos como Progressive Web App: registro con autenticación, notificaciones de pedidos en tiempo real con alerta sonora y funcionamiento offline vía Service Worker.',
+		tech: ['PWA', 'JavaScript', 'Firebase', 'HTML5', 'CSS3'],
+		repo: 'https://github.com/valeriacampos17/admin-orders',
+		highlights: ['PWA offline', 'Firebase'],
+	},
+	{
+		title: 'DesarrolloWeb · Práctica JS',
+		subtitle: 'JavaScript · Aprendizaje',
+		description:
+			'Repositorio de práctica con ejercicios progresivos de JavaScript: variables, constantes, operadores, tipos de datos y condicionales. La base de mis fundamentos de programación.',
+		tech: ['JavaScript', 'HTML5'],
+		repo: 'https://github.com/valeriacampos17/DesarrolloWeb',
+	},
 ];
 
 export interface Experience {

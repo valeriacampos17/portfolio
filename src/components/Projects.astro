@@ -6,7 +6,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <section id="proyectos" class="scroll-mt-20 py-24">
-	<div class="mx-auto max-w-6xl px-6">
+	<div class="mx-auto max-w-7xl px-6 sm:px-16 lg:px-20">
 		<SectionHeading
 			kicker="Proyectos"
 			title="Proyectos destacados"
@@ -18,7 +18,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 				type="button"
 				id="carousel-prev"
 				aria-label="Proyecto anterior"
-				class="absolute left-2 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-zinc-900/80 text-zinc-300 backdrop-blur-sm transition hover:border-brand-500/40 hover:text-white disabled:cursor-not-allowed disabled:opacity-30 sm:flex"
+				class="absolute -left-14 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-zinc-900/80 text-zinc-300 backdrop-blur-sm transition hover:border-brand-500/40 hover:text-white disabled:cursor-not-allowed disabled:opacity-30 sm:flex"
 			>
 				<svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
@@ -139,7 +139,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 				type="button"
 				id="carousel-next"
 				aria-label="Proyecto siguiente"
-				class="absolute right-2 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-zinc-900/80 text-zinc-300 backdrop-blur-sm transition hover:border-brand-500/40 hover:text-white disabled:cursor-not-allowed disabled:opacity-30 sm:flex"
+				class="absolute -right-14 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-zinc-900/80 text-zinc-300 backdrop-blur-sm transition hover:border-brand-500/40 hover:text-white disabled:cursor-not-allowed disabled:opacity-30 sm:flex"
 			>
 				<svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
@@ -192,10 +192,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 			prev.toggleAttribute('disabled', atStart());
 			next.toggleAttribute('disabled', atEnd());
 
-			const index = Math.min(
+			let index = Math.min(
 				slides.length - 1,
 				Math.max(0, Math.round(track.scrollLeft / (step() || 1))),
 			);
+			if (atEnd()) index = slides.length - 1;
 			dots.forEach((dot, i) => {
 				const active = i === index;
 				dot.classList.toggle('w-4', active);
